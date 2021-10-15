@@ -1,6 +1,6 @@
 # flutter_app_my_shop
 
-A new Flutter project.
+This is a state management demo from Udemy Flutter course, feel free to download.
 
 ## Getting Started
 
