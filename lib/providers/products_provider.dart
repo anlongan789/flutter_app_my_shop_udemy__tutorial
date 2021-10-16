@@ -29,6 +29,14 @@ class ProductsProvider with ChangeNotifier {
       imgUrl:
           "https://storage.googleapis.com/cdn.nhanh.vn/store/2071/ps/20210121/bj041_xanh_da_tri_1_50857999998_o.jpg",
     ),
+    Product(
+      id: 'p4',
+      title: 'Fedora Hat',
+      description: 'Classic blue hat',
+      price: 7.99,
+      imgUrl:
+          "https://img.hatshopping.com/Manuel-Fedora-Hat-by-Mayser.44100_pf192.jpg",
+    ),
   ];
 
   // var _showFavoritesOnly = false;
@@ -58,8 +66,29 @@ class ProductsProvider with ChangeNotifier {
     return _items.firstWhere((prod) => prod.id == id);
   }
 
-  void addProduct() {
-    // _items.add(value);
+  void addProduct(Product product) {
+    final newProduct = Product(
+        id: DateTime.now().toString(),
+        title: product.title,
+        description: product.description,
+        price: product.price,
+        imgUrl: product.imgUrl);
+    _items.add(newProduct);
+    notifyListeners();
+  }
+
+  void updateProduct(String id, Product newProduct) {
+    final prodIndex = _items.indexWhere((prod) => prod.id == id);
+    if (prodIndex >= 0) {
+      _items[prodIndex] = newProduct;
+      notifyListeners();
+    } else {
+      print('...');
+    }
+  }
+
+  void deleteProduct(String id) {
+    _items.removeWhere((prod) => prod.id == id);
     notifyListeners();
   }
 }
