@@ -1,6 +1,7 @@
 # flutter_app_my_shop
 
 This is a state management demo from Udemy Flutter course, feel free to download.
+--Update (10/16): Working with user input and Form
 
 ## Getting Started
 
