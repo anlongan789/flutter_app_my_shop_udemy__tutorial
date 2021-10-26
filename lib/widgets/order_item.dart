@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../providers/orders.dart' as ord;
+import '../providers/order_provider.dart';
+import '../models/order.dart' as ord;
 import 'dart:math';
 
 class OrderItem extends StatefulWidget {
@@ -22,7 +23,7 @@ class _OrderItemState extends State<OrderItem> {
       child: Column(
         children: [
           ListTile(
-            title: Text("\$${widget.order.amount}"),
+            title: Text("\$${widget.order.amount.toStringAsFixed(2)}"),
             subtitle: Text(
               DateFormat('dd/MM/yyyy hh:mm').format(widget.order.dateTime),
             ),

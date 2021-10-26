@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app_my_shop/providers/cart_provider.dart';
-import 'package:flutter_app_my_shop/providers/orders.dart';
+import 'package:flutter_app_my_shop/providers/order_provider.dart';
 import 'package:flutter_app_my_shop/providers/products_provider.dart';
 import 'package:flutter_app_my_shop/screens/cart_screen.dart';
 import 'package:flutter_app_my_shop/screens/edit_product_screen.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) => CartProvider(),
         ),
         ChangeNotifierProvider(
-          create: (ctx) => Orders(),
+          create: (ctx) => OrderProvider(),
         )
       ],
       // create: (ctx) =>
